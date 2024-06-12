@@ -14,9 +14,18 @@ function WeatherApp() {
       if(!response.ok){
         window.alert("Please enter a valid location.")
         return;
-      } else {
+      }
+      else {
         setData(data);
         setContainerDisplay({ display: "flex" }); }
+
+        if(data.sys?.country === "IN"){
+          document.getElementById("loc").classList.remove("fa-location-dot");
+          document.getElementById("loc").classList.add("fa-house");
+            } else if(data.sys?.country !== "IN"){
+              document.getElementById("loc").classList.remove("fa-house");
+              document.getElementById("loc").classList.add("fa-location-dot");
+            }
     } catch (error) {
      console.log(error);
     }
@@ -33,7 +42,6 @@ function WeatherApp() {
       setContainerDisplay({ display: "none" });
     }
   }
-
   return (
     <div className="weatherapp">
       <form className="inputs" onSubmit={handleSubmit}>
@@ -51,7 +59,7 @@ function WeatherApp() {
       </form>
       <div className="container" style={containerDisplay}>
         <p className="location">
-          <i className="fa-solid fa-location-dot"></i> 
+          <i className="fa-solid fa-location-dot" id="loc"></i> 
           {data.name}, {data.sys?.country.toUpperCase()}
         </p>
         <p className="temp">
