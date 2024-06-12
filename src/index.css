@@ -1,0 +1,75 @@
+body {
+  background-image: url(./assets/haarlem-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.weatherapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+.enter-bar {
+  height: 40px;
+  width: 250px;
+  border-radius: 5px;
+  border: 2px solid;
+  background-color: transparent;
+  font-size: 25px;
+  margin-right: 25px;
+  transform: translateY(10px);
+
+}
+.enter-bar::placeholder{
+  color: black;
+  font-size: 24px;
+  transform: translateX(1px);
+}
+.check-btn {
+  background-color: lightgreen;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 14.5px;
+  width: 150px;
+  height: 3.7em;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.check-btn:hover {
+  opacity: 60%;
+}
+.check-btn:active {
+  opacity: 35%;
+}
+.container {
+  height: 450px;
+  width: 700px;
+  border: 2px solid;
+  backdrop-filter: blur(15px);
+  font-weight: bold;
+  font-size: 32.5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.container p {
+  margin-bottom: 15px;
+  transform: translateY(12.5px);
+}
+.container p i {
+  margin-right: 15px;
+}
+.fa-circle-xmark {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  cursor: pointer;
+  font-size: 1.3em;
+}
